@@ -253,3 +253,93 @@ padding:40px;
 color:white;
 
 }
+/* ==========================
+   OPSNET DASHBOARD
+========================== */
+
+body.dashboard {
+
+    display: flex;
+    margin: 0;
+    background: #0b1220;
+    color: white;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+
+}
+
+
+.sidebar {
+
+    width: 240px;
+    background: #111827;
+    padding: 25px;
+    box-sizing: border-box;
+
+}
+
+
+.sidebar .logo {
+
+    font-size: 70px;
+    text-align: center;
+
+}
+
+
+.sidebar h2 {
+
+    text-align: center;
+
+}
+
+
+.main {
+
+    flex: 1;
+    padding: 40px;
+
+}
+
+
+.grid {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 25px;
+
+}
+
+
+.card {
+
+    background: #1f2937;
+    padding: 30px;
+    border-radius: 18px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 30px;
+
+}
+
+
+.card h2 {
+
+    font-size: 22px;
+
+}
+
+
+.card p {
+
+    font-size: 15px;
+    color: #cbd5e1;
+
+}
+
+
+.card:hover {
+
+    background: #2563eb;
+
+}
