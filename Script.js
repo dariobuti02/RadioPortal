@@ -14,9 +14,6 @@ function apriSettore(settore) {
             window.location.href = "polizia.html";
             break;
 
-        case "carabinieri":
-            window.location.href = "carabinieri.html";
-            break;
 
         case "protezione":
             window.location.href = "protezione_civile.html";
