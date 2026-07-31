@@ -152,26 +152,24 @@ function caricaFrequenze(settore) {
 function aggiungiFrequenza() {
 
 
-    let lista = JSON.parse(localStorage.getItem(settoreCorrente)) || [];
+   let lista = JSON.parse(localStorage.getItem(settoreCorrente)) || [];
 
 
-    lista.push({
-
-        nome: prompt("Nome canale:"),
-        rx: prompt("Frequenza RX:"),
-        tx: prompt("Frequenza TX:"),
-        banda: prompt("Banda:"),
-        mod: prompt("Modalità:"),
-        toni: prompt("Toni:"),
-        note: prompt("Note:")
-
-    });
+lista.push({
+    nome,
+    rx,
+    tx,
+    banda,
+    mod,
+    toni,
+    note
+});
 
 
-    localStorage.setItem(
-        settoreCorrente,
-        JSON.stringify(lista)
-    );
+localStorage.setItem(
+    settoreCorrente,
+    JSON.stringify(lista)
+);
 
 
     caricaFrequenze(settoreCorrente);
