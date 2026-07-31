@@ -87,3 +87,161 @@ function apriSettore(settore) {
     }
 
 }
+// ================================
+// DATABASE FREQUENZE VVF
+// ================================
+
+
+function caricaFrequenze() {
+
+    let lista = JSON.parse(localStorage.getItem("vvf")) || [];
+
+    let ricerca = document.getElementById("ricerca");
+
+    let testo = ricerca ? ricerca.value.toLowerCase() : "";
+
+    let tabella = document.getElementById("tabellaFrequenze");
+
+    if (!tabella) return;
+
+    tabella.innerHTML = "";
+
+
+    lista.forEach((f, indice) => {
+
+        if (
+            f.nome.toLowerCase().includes(testo) ||
+            f.rx.includes(testo)
+        ) {
+
+            tabella.innerHTML += `
+
+            <tr>
+
+            <td>${f.nome}</td>
+            <td>${f.rx}</td>
+            <td>${f.tx}</td>
+            <td>${f.banda}</td>
+            <td>${f.mod}</td>
+            <td>${f.toni}</td>
+            <td>${f.note}</td>
+
+            <td>
+
+            <button onclick="modificaFrequenza(${indice})">
+            ✏️
+            </button>
+
+            <button onclick="eliminaFrequenza(${indice})">
+            🗑️
+            </button>
+
+            </td>
+
+            </tr>
+
+            `;
+
+        }
+
+    });
+
+}
+
+
+
+function aggiungiFrequenza() {
+
+
+let nome = prompt("Nome canale:");
+
+let rx = prompt("Frequenza RX:");
+
+let tx = prompt("Frequenza TX:");
+
+let banda = prompt("Banda (VHF/UHF):");
+
+let mod = prompt("Modalità:");
+
+let toni = prompt("CTCSS/DCS:");
+
+let note = prompt("Note:");
+
+
+
+let lista = JSON.parse(localStorage.getItem("vvf")) || [];
+
+
+lista.push({
+
+nome,
+rx,
+tx,
+banda,
+mod,
+toni,
+note
+
+});
+
+
+localStorage.setItem("vvf", JSON.stringify(lista));
+
+
+caricaFrequenze();
+
+}
+
+
+
+
+function eliminaFrequenza(id) {
+
+
+let lista = JSON.parse(localStorage.getItem("vvf")) || [];
+
+
+lista.splice(id,1);
+
+
+localStorage.setItem("vvf", JSON.stringify(lista));
+
+
+caricaFrequenze();
+
+}
+
+
+
+
+function modificaFrequenza(id) {
+
+
+let lista = JSON.parse(localStorage.getItem("vvf")) || [];
+
+
+let f = lista[id];
+
+
+f.nome = prompt("Nome:", f.nome);
+
+f.rx = prompt("RX:", f.rx);
+
+f.tx = prompt("TX:", f.tx);
+
+f.banda = prompt("Banda:", f.banda);
+
+f.mod = prompt("Modalità:", f.mod);
+
+f.toni = prompt("Toni:", f.toni);
+
+f.note = prompt("Note:", f.note);
+
+
+
+localStorage.setItem("vvf", JSON.stringify(lista));
+
+
+caricaFrequenze();
+
+}
