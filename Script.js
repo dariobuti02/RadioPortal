@@ -96,11 +96,9 @@ function apriSettore(settore) {
 let settoreCorrente = "vvf";
 
 
-
 function caricaFrequenze(settore) {
 
     settoreCorrente = settore;
-
 
     let lista = JSON.parse(localStorage.getItem(settore)) || [];
 
