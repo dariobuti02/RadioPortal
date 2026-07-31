@@ -2,6 +2,20 @@
 // OPSNET LOGIN
 // ================================
 
+// ================================
+// FIREBASE CONFIGURAZIONE
+// ================================
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCNlLl9cp7m0ZjlsLWBGmsq5XW8cjIYcGU",
+  authDomain: "opsnet-801c4.firebaseapp.com",
+  databaseURL: "https://opsnet-801c4-default-rtdb.firebaseio.com",
+  projectId: "opsnet-801c4",
+  storageBucket: "opsnet-801c4.firebasestorage.app",
+  messagingSenderId: "1004654981773",
+  appId: "1:1004654981773:web:4567b072b212592ad368c4"
+};
+
 const PASSWORD = "Opsnet";
 
 
