@@ -1,25 +1,50 @@
-<div class="logo">
-    🖥️
-</div>
+<!DOCTYPE html>
+<html>
+<head>
 
-<h1>OPSNET</h1>
+<title>OPSNET - Accesso</title>
+<link rel="stylesheet" href="Style.css">
 
-<p>
-    Centrale Operativa - Gestione e archiviazione dati
-</p>
+</head>
 
-<input 
-    type="password" 
-    id="password" 
+<body class="login-page">
+
+
+<div class="login-box">
+
+    <div class="logo">
+        📡
+    </div>
+
+    <h1>OPSNET</h1>
+
+    <p>
+        Database Frequenze Radio
+    </p>
+
+    <div class="status">
+        🟢 Sistema Online
+    </div>
+
+
+    <input 
+    type="password"
+    id="password"
     placeholder="Inserisci password">
 
-<button onclick="login()">
-    Accedi
-</button>
+
+    <button onclick="login()">
+        🔐 Accedi al sistema
+    </button>
+
 
     <p id="errore"></p>
 
-    <script src="Script.js"></script>
+
+</div>
+
+
+<script src="Script.js"></script>
 
 </body>
 </html>
