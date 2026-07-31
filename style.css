@@ -47,3 +47,89 @@ input {
     font-size: 15px;
     color: #cbd5e1;
 }
+.login-page {
+
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#0b1220;
+
+}
+
+
+.login-box {
+
+    width:380px;
+    background:#1f2937;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 0 30px #000;
+
+}
+
+
+.login-box .logo {
+
+    font-size:70px;
+
+}
+
+
+.login-box h1 {
+
+    font-size:45px;
+    margin:10px;
+
+}
+
+
+.login-box p {
+
+    color:#cbd5e1;
+
+}
+
+
+.status {
+
+    margin:20px;
+    padding:10px;
+    background:#111827;
+    border-radius:10px;
+
+}
+
+
+.login-box input {
+
+    width:90%;
+    padding:15px;
+    margin:15px;
+    border-radius:10px;
+    border:none;
+    font-size:16px;
+
+}
+
+
+.login-box button {
+
+    width:95%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+
+}
+
+
+.login-box button:hover {
+
+    background:#1d4ed8;
+
+}
