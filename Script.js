@@ -235,3 +235,4 @@ function modificaFrequenza(id) {
     caricaFrequenze(settoreCorrente);
 
 }
+console.log("OPSNET SCRIPT CARICATO");
