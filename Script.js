@@ -31,15 +31,15 @@ function login() {
 
 function apriSettore(settore) {
 
-    switch (settore) {
+    if (settore === "vvf") {
+        window.location.href = "vvf.html";
+    }
 
-        case "vvf":
-            window.location.href = "vvf.html";
-            break;
+    if (settore === "polizia") {
+        window.location.href = "polizia.html";
+    }
 
-        case "polizia":
-            window.location.href = "polizia.html";
-            break;
+}
 
         case "carabinieri":
             window.location.href = "carabinieri.html";
