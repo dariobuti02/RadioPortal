@@ -1,5 +1,31 @@
 // ================================
-// OPSNET Gestione accesso
+// OPSNET LOGIN
+// ================================
+
+const PASSWORD = "Opsnet";
+
+
+function login() {
+
+    let passwordInserita = document.getElementById("password").value;
+    let errore = document.getElementById("errore");
+
+    if (passwordInserita === PASSWORD) {
+
+        window.location.href = "portal.html";
+
+    } else {
+
+        errore.textContent = "Password non corretta";
+
+    }
+
+}
+
+
+
+// ================================
+// APERTURA SETTORI
 // ================================
 
 function apriSettore(settore) {
@@ -18,7 +44,7 @@ function apriSettore(settore) {
             window.location.href = "carabinieri.html";
             break;
 
-        case "protezione civile":
+        case "protezione":
             window.location.href = "protezione_civile.html";
             break;
 
@@ -56,6 +82,156 @@ function apriSettore(settore) {
 
         default:
             alert("Settore non disponibile");
+
     }
+
+}
+
+
+
+// ================================
+// DATABASE FREQUENZE
+// ================================
+
+let settoreCorrente = "vvf";
+
+
+
+function caricaFrequenze(settore) {
+
+    settoreCorrente = settore;
+
+
+    let lista = JSON.parse(localStorage.getItem(settore)) || [];
+
+
+    let tabella = document.getElementById("tabellaFrequenze");
+
+    if (!tabella) return;
+
+
+    tabella.innerHTML = "";
+
+
+    lista.forEach((f, indice) => {
+
+
+        tabella.innerHTML += `
+
+        <tr>
+
+        <td>${f.nome}</td>
+        <td>${f.rx}</td>
+        <td>${f.tx}</td>
+        <td>${f.banda}</td>
+        <td>${f.mod}</td>
+        <td>${f.toni}</td>
+        <td>${f.note}</td>
+
+        <td>
+
+        <button onclick="modificaFrequenza(${indice})">
+        ✏️
+        </button>
+
+        <button onclick="eliminaFrequenza(${indice})">
+        🗑️
+        </button>
+
+        </td>
+
+        </tr>
+
+        `;
+
+    });
+
+}
+
+
+
+
+function aggiungiFrequenza() {
+
+
+    let lista = JSON.parse(localStorage.getItem(settoreCorrente)) || [];
+
+
+    lista.push({
+
+        nome: prompt("Nome canale:"),
+        rx: prompt("Frequenza RX:"),
+        tx: prompt("Frequenza TX:"),
+        banda: prompt("Banda:"),
+        mod: prompt("Modalità:"),
+        toni: prompt("Toni:"),
+        note: prompt("Note:")
+
+    });
+
+
+    localStorage.setItem(
+        settoreCorrente,
+        JSON.stringify(lista)
+    );
+
+
+    caricaFrequenze(settoreCorrente);
+
+}
+
+
+
+
+
+function eliminaFrequenza(id) {
+
+
+    let lista = JSON.parse(localStorage.getItem(settoreCorrente)) || [];
+
+
+    lista.splice(id,1);
+
+
+    localStorage.setItem(
+        settoreCorrente,
+        JSON.stringify(lista)
+    );
+
+
+    caricaFrequenze(settoreCorrente);
+
+}
+
+
+
+
+
+function modificaFrequenza(id) {
+
+
+    let lista = JSON.parse(localStorage.getItem(settoreCorrente)) || [];
+
+
+    let f = lista[id];
+
+
+    f.nome = prompt("Nome:", f.nome);
+    f.rx = prompt("RX:", f.rx);
+    f.tx = prompt("TX:", f.tx);
+    f.banda = prompt("Banda:", f.banda);
+    f.mod = prompt("Modalità:", f.mod);
+    f.toni = prompt("Toni:", f.toni);
+    f.note = prompt("Note:", f.note);
+
+
+
+    localStorage.setItem(
+        settoreCorrente,
+        JSON.stringify(lista)
+    );
+
+
+    caricaFrequenze(settoreCorrente);
 
 }
