@@ -1,7 +1,8 @@
 // Cambia questa password con quella che vuoi usare
-const PASSWORD = "Radio2026";
+const PASSWORD = "Opsnet";
 
 function login() {
+
     const passwordInserita = document.getElementById("password").value;
     const errore = document.getElementById("errore");
 
@@ -10,4 +11,14 @@ function login() {
     } else {
         errore.textContent = "Password non corretta";
     }
+
+}
+
+
+function apriSettore(settore) {
+
+    if (settore === "vvf") {
+        window.location.href = "vvf.html";
+    }
+
 }

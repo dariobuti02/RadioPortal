@@ -1,76 +1,49 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #101820;
+* body {
+    background: #111827;
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.login-container {
-    width: 90%;
-    max-width: 380px;
-    background: #1b2636;
-    border-radius: 18px;
+    font-family: Arial, sans-serif;
     padding: 30px;
-    text-align: center;
-    box-shadow: 0 0 20px rgba(0,0,0,.5);
-}
-
-.logo {
-    font-size: 60px;
-    margin-bottom: 10px;
 }
 
 h1 {
-    color: #00bfff;
-    margin-bottom: 10px;
-}
-
-p {
-    color: #bfc9d4;
-    margin-bottom: 20px;
+    font-size: 40px;
 }
 
 input {
     width: 100%;
-    padding: 14px;
-    border-radius: 10px;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 8px;
     border: none;
-    margin-bottom: 15px;
-    background: #2b3a4f;
-    color: white;
-    font-size: 16px;
+    font-size: 18px;
 }
 
-input::placeholder {
-    color: #9aa7b5;
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 20px;
 }
 
-button {
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 10px;
-    background: #00bfff;
-    color: #001018;
-    font-size: 16px;
-    font-weight: bold;
+.card {
+    background: #1f2937;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
     cursor: pointer;
+    transition: 0.3s;
+    font-size: 35px;
 }
 
-button:hover {
-    background: #00a6dd;
+.card:hover {
+    transform: scale(1.05);
+    background: #374151;
 }
 
-#errore {
-    color: #ff5b5b;
-    margin-top: 15px;
+.card h2 {
+    font-size: 22px;
+}
+
+.card p {
+    font-size: 15px;
+    color: #cbd5e1;
 }
