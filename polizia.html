@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>OPSNET - Polizia</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+
+<h1>🚓 Polizia</h1>
+<p>Database frequenze operative</p>
+
+<button onclick="aggiungiFrequenza()">
+➕ Aggiungi frequenza
+</button>
+
+<br><br>
+
+<input 
+type="text"
+id="ricerca"
+placeholder="🔍 Cerca frequenza..."
+onkeyup="caricaFrequenze()">
+
+
+<table>
+
+<thead>
+<tr>
+<th>Nome</th>
+<th>RX</th>
+<th>TX</th>
+<th>Banda</th>
+<th>Modalità</th>
+<th>Toni</th>
+<th>Note</th>
+<th>Azioni</th>
+</tr>
+</thead>
+
+<tbody id="tabellaFrequenze">
+
+</tbody>
+
+</table>
+
+
+<br>
+
+<button onclick="window.location.href='portal.html'">
+⬅ Torna al menu
+</button>
+
+
+<script src="Script.js"></script>
+
+</html>
+<body onload="caricaFrequenze()">
 
