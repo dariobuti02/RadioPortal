@@ -133,3 +133,97 @@ input {
     background:#1d4ed8;
 
 }
+.dashboard {
+
+display:flex;
+background:#0b1220;
+min-height:100vh;
+
+}
+
+
+.sidebar {
+
+width:240px;
+background:#111827;
+padding:25px;
+color:white;
+
+}
+
+
+.sidebar .logo {
+
+font-size:60px;
+text-align:center;
+
+}
+
+
+.sidebar h2 {
+
+text-align:center;
+
+}
+
+
+
+.main {
+
+flex:1;
+padding:40px;
+color:white;
+
+}
+
+
+
+.grid {
+
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(230px,1fr));
+
+gap:25px;
+
+}
+
+
+
+.card {
+
+background:#1f2937;
+padding:30px;
+border-radius:18px;
+text-align:center;
+cursor:pointer;
+transition:0.3s;
+
+font-size:30px;
+
+}
+
+
+
+.card h2 {
+
+font-size:22px;
+
+}
+
+
+.card p {
+
+font-size:15px;
+color:#cbd5e1;
+
+}
+
+
+
+.card:hover {
+
+transform:scale(1.05);
+background:#2563eb;
+
+}
