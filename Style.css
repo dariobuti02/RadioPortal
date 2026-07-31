@@ -227,3 +227,29 @@ transform:scale(1.05);
 background:#2563eb;
 
 }
+.dashboard {
+
+display:flex;
+background:#0b1220;
+min-height:100vh;
+
+}
+
+
+.sidebar {
+
+width:240px;
+background:#111827;
+padding:25px;
+color:white;
+
+}
+
+
+.main {
+
+flex:1;
+padding:40px;
+color:white;
+
+}
